@@ -1,11 +1,15 @@
-import React from 'react';
+import React from "react"
 
 function ToDoItem(props) {
-  return (
-      <div className='todo-item'>
-        <input type="checkbox" checked={props.completed}/>
-        <h1 style={{color: props.completed ? 'black' : 'red'}}>{props.text}</h1>
-      </div>
+    return (
+        <div className="todo-item">
+            <input 
+                type="checkbox" 
+                checked={props.item.completed} 
+                onChange={() => props.handleChange(props.item.id)}
+            />
+            <p>{props.item.text}</p>
+        </div>
     )
 }
 
